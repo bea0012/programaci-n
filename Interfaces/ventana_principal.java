@@ -130,7 +130,7 @@ public class ventana_principal extends JFrame {
 		JLabel banner = new JLabel("New label");
 		banner.setBounds(0, 0, 650, 102);
 		banner.setBackground(Color.WHITE);
-		banner.setIcon(new ImageIcon("C:\\Users\\Bea\\Desktop\\1DAW\\Programación\\banner.jpg"));
+		banner.setIcon(new ImageIcon(ventana_principal.class.getResource("/imagenes/banner.jpg")));
 		contentPane.add(banner);
 		
 		Gmail = new JTextField();

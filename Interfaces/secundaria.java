@@ -54,7 +54,7 @@ public class secundaria extends JFrame {
 		fondo.add(titulo);
 		
 		JLabel banner = new JLabel("New label");
-		banner.setIcon(new ImageIcon("C:\\Users\\Bea\\Desktop\\1DAW\\Programación\\banner.jpg"));
+		banner.setIcon(new ImageIcon(secundaria.class.getResource("/imagenes/banner.jpg")));
 		banner.setBounds(0, 0, 651, 103);
 		fondo.add(banner);
 		
@@ -77,7 +77,7 @@ public class secundaria extends JFrame {
 		fondo.add(text2);
 		
 		JLabel fotoNoticia1 = new JLabel("New label");
-		fotoNoticia1.setIcon(new ImageIcon("C:\\Users\\Bea\\Downloads\\supernatural-823-sacrifice-angels-falling.jpg"));
+		fotoNoticia1.setIcon(new ImageIcon(secundaria.class.getResource("/imagenes/supernatural-823-sacrifice-angels-falling.jpg")));
 		fotoNoticia1.setBounds(41, 212, 275, 175);
 		fondo.add(fotoNoticia1);
 		
@@ -98,7 +98,7 @@ public class secundaria extends JFrame {
 		fondo.add(noticia2);
 		
 		JLabel fotoNoticia2 = new JLabel("New label");
-		fotoNoticia2.setIcon(new ImageIcon("C:\\Users\\Bea\\Desktop\\1DAW\\Programación\\Map_of_Smith_Co,_Ks,_USA.png"));
+		fotoNoticia2.setIcon(new ImageIcon(secundaria.class.getResource("/imagenes/Map_of_Smith_Co,_Ks,_USA.png")));
 		fotoNoticia2.setBounds(359, 212, 268, 175);
 		fondo.add(fotoNoticia2);
 	}
