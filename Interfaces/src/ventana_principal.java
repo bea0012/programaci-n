@@ -60,7 +60,7 @@ public class ventana_principal extends JFrame {
 	 */
 	public ventana_principal() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 667, 488);
+		setBounds(100, 100, 669, 488);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(60, 0, 0));
 		contentPane.setToolTipText("dfhndfhn");
@@ -69,17 +69,17 @@ public class ventana_principal extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("First Name");
-		lblNewLabel.setBounds(45, 137, 60, 24);
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel.setForeground(new Color(255, 255, 255));
-		contentPane.add(lblNewLabel);
+		JLabel firstName = new JLabel("First Name");
+		firstName.setBounds(45, 137, 60, 24);
+		firstName.setFont(new Font("Tahoma", Font.BOLD, 11));
+		firstName.setForeground(new Color(255, 255, 255));
+		contentPane.add(firstName);
 		
-		JLabel lblNewLabel_1 = new JLabel("Last Name");
-		lblNewLabel_1.setBounds(45, 175, 60, 14);
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_1.setForeground(new Color(255, 255, 255));
-		contentPane.add(lblNewLabel_1);
+		JLabel lastName = new JLabel("Last Name");
+		lastName.setBounds(45, 175, 60, 14);
+		lastName.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lastName.setForeground(new Color(255, 255, 255));
+		contentPane.add(lastName);
 		
 		Nombre = new JTextField();
 		Nombre.setBounds(120, 139, 129, 20);
@@ -96,41 +96,30 @@ public class ventana_principal extends JFrame {
 		contentPane.add(nombreUsuario);
 		nombreUsuario.setColumns(10);
 		
-		JLabel lblNewLabel_2 = new JLabel("User name");
-		lblNewLabel_2.setBounds(44, 233, 61, 17);
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_2.setForeground(new Color(255, 255, 255));
-		contentPane.add(lblNewLabel_2);
+		JLabel userName = new JLabel("User name");
+		userName.setBounds(44, 233, 61, 17);
+		userName.setFont(new Font("Tahoma", Font.BOLD, 11));
+		userName.setForeground(new Color(255, 255, 255));
+		contentPane.add(userName);
 		
-		JLabel lblNewLabel_3 = new JLabel("Password");
-		lblNewLabel_3.setBounds(54, 265, 56, 14);
-		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_3.setForeground(new Color(255, 255, 255));
-		contentPane.add(lblNewLabel_3);
+		JLabel password = new JLabel("Password");
+		password.setBounds(54, 265, 56, 14);
+		password.setFont(new Font("Tahoma", Font.BOLD, 11));
+		password.setForeground(new Color(255, 255, 255));
+		contentPane.add(password);
 		
-		JButton inicio = new JButton("Submit");
-		inicio.setBounds(271, 394, 103, 23);
-		inicio.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-					JFrame secundaria = new secundaria();
-					secundaria.setVisible(true);
-					principal.setVisible(false);
-					
-			}
-		});
-		contentPane.add(inicio);
-		
-		JLabel lblNewLabel_4 = new JLabel("Supernatural News");
-		lblNewLabel_4.setBounds(187, 31, 294, 46);
-		lblNewLabel_4.setForeground(new Color(255, 255, 255));
-		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 30));
-		lblNewLabel_4.setBackground(new Color(0, 128, 0));
-		contentPane.add(lblNewLabel_4);
+		 
+		JLabel titulo = new JLabel("Supernatural News");
+		titulo.setBounds(187, 31, 294, 46);
+		titulo.setForeground(new Color(255, 255, 255));
+		titulo.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 30));
+		titulo.setBackground(new Color(0, 128, 0));
+		contentPane.add(titulo);
 		
 		JLabel banner = new JLabel("New label");
 		banner.setBounds(0, 0, 650, 102);
 		banner.setBackground(Color.WHITE);
-		banner.setIcon(new ImageIcon("C:\\Users\\Bea\\Desktop\\1DAW\\Programación\\banner.jpg"));
+		banner.setIcon(new ImageIcon(ventana_principal.class.getResource("/imagenes/banner.jpg")));
 		contentPane.add(banner);
 		
 		Gmail = new JTextField();
@@ -138,17 +127,17 @@ public class ventana_principal extends JFrame {
 		contentPane.add(Gmail);
 		Gmail.setColumns(10);
 		
-		JLabel lblNewLabel_5 = new JLabel("Email");
-		lblNewLabel_5.setBounds(70, 208, 36, 14);
-		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_5.setForeground(new Color(255, 255, 255));
-		contentPane.add(lblNewLabel_5);
+		JLabel email = new JLabel("Email");
+		email.setBounds(70, 208, 36, 14);
+		email.setFont(new Font("Tahoma", Font.BOLD, 11));
+		email.setForeground(new Color(255, 255, 255));
+		contentPane.add(email);
 		
-		JLabel lblNewLabel_7 = new JLabel("Species");
-		lblNewLabel_7.setBounds(64, 296, 46, 14);
-		lblNewLabel_7.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewLabel_7.setForeground(new Color(255, 255, 255));
-		contentPane.add(lblNewLabel_7);
+		JLabel species = new JLabel("Species");
+		species.setBounds(64, 296, 46, 14);
+		species.setFont(new Font("Tahoma", Font.BOLD, 11));
+		species.setForeground(new Color(255, 255, 255));
+		contentPane.add(species);
 		
 		final JRadioButton boton1 = new JRadioButton("Hunter");
 		boton1.setBounds(120, 292, 71, 23);
@@ -220,9 +209,11 @@ public class ventana_principal extends JFrame {
 				}
 			
 			if(!boton4.isSelected()) {
-				otraEspecie.enable(false);
+				otraEspecie.enable();
+				otraEspecie.hide();
 			}else {
 				otraEspecie.enable(true);
+				otraEspecie.show();
 			}
 			
 		}
@@ -251,11 +242,40 @@ public class ventana_principal extends JFrame {
 			}
 		});
 		botonContraseña.setForeground(new Color(255, 255, 255));
-		botonContraseña.setBackground(new Color(53, 0, 0));
+		botonContraseña.setBackground(new Color(62, 0, 0));
 		contentPane.add(botonContraseña);
 		
 		Contraseña = new JPasswordField();
 		Contraseña.setBounds(120, 262, 129, 20);
 		contentPane.add(Contraseña);
+		
+		JButton inicio = new JButton("Submit");
+		inicio.setBounds(271, 394, 103, 23);
+		inicio.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(Gmail.getText().contains("@") && Gmail.getText().contains(".")) {
+					if(boton1.isSelected() || boton2.isSelected() || boton3.isSelected() || boton4.isSelected()) {
+						if(Contraseña.getText().contains("*") || Contraseña.getText().contains("#") || Contraseña.getText().contains(".")) {
+							JFrame login = new login();
+							login.setVisible(true);
+							principal.setVisible(false);
+						}else {
+							 Error obj= new Error();
+							obj.setVisible(true);
+						}
+					}else {
+						Error2 obj= new Error2();
+						obj.setVisible(true);
+					}
+				}else {
+					Error3 obj= new Error3();
+					obj.setVisible(true);
+				}
+					
+					
+			}
+		});
+		contentPane.add(inicio);
 	}
+	
 }

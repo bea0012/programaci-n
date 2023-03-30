@@ -59,7 +59,7 @@ public class login extends JFrame {
 		contentPane.add(titulo);
 		
 		JLabel banner = new JLabel("New label");
-		banner.setIcon(new ImageIcon("C:\\Users\\Bea\\Desktop\\1DAW\\Programación\\banner.jpg"));
+		banner.setIcon(new ImageIcon(login.class.getResource("/imagenes/banner.jpg")));
 		banner.setBounds(0, 0, 650, 102);
 		contentPane.add(banner);
 		
@@ -97,7 +97,7 @@ public class login extends JFrame {
 		});
 		botonContraseña.setBackground(new Color(60, 0, 0));
 		botonContraseña.setForeground(new Color(255, 255, 255));
-		botonContraseña.setBounds(414, 254, 56, 23);
+		botonContraseña.setBounds(401, 254, 69, 23);
 		contentPane.add(botonContraseña);
 		
 		JButton Sudmit = new JButton("Sudmit");
