@@ -60,7 +60,7 @@ public class ventana_principal extends JFrame {
 	 */
 	public ventana_principal() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 669, 488);
+		setBounds(100, 100, 671, 488);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(60, 0, 0));
 		contentPane.setToolTipText("dfhndfhn");
@@ -108,18 +108,7 @@ public class ventana_principal extends JFrame {
 		password.setForeground(new Color(255, 255, 255));
 		contentPane.add(password);
 		
-		JButton inicio = new JButton("Submit");
-		inicio.setBounds(271, 394, 103, 23);
-		inicio.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-					JFrame login = new login();
-					login.setVisible(true);
-					principal.setVisible(false);
-					
-			}
-		});
-		contentPane.add(inicio);
-		
+		 
 		JLabel titulo = new JLabel("Supernatural News");
 		titulo.setBounds(187, 31, 294, 46);
 		titulo.setForeground(new Color(255, 255, 255));
@@ -253,11 +242,44 @@ public class ventana_principal extends JFrame {
 			}
 		});
 		botonContraseña.setForeground(new Color(255, 255, 255));
-		botonContraseña.setBackground(new Color(53, 0, 0));
+		botonContraseña.setBackground(new Color(62, 0, 0));
 		contentPane.add(botonContraseña);
 		
 		Contraseña = new JPasswordField();
 		Contraseña.setBounds(120, 262, 129, 20);
 		contentPane.add(Contraseña);
+		
+		JButton inicio = new JButton("Submit");
+		inicio.setBounds(271, 394, 103, 23);
+		inicio.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if(Gmail.getText().contains("@") && Gmail.getText().contains(".")) {
+					if(boton1.isSelected() || boton2.isSelected() || boton3.isSelected() || boton4.isSelected()) {
+						if(Contraseña.getText().contains("*") || Contraseña.getText().contains("#") || Contraseña.getText().contains(".")) {
+							JFrame login = new login();
+							login.setVisible(true);
+							principal.setVisible(false);
+							
+							final usuario agregar = new usuario();
+							usuario.agregar_usuario(Nombre.getText(), Apellido.getText(), Gmail.getText(), nombreUsuario.getText(), Contraseña.getText());
+						}else {
+							 Error obj= new Error();
+							obj.setVisible(true);
+						}
+					}else {
+						Error2 obj= new Error2();
+						obj.setVisible(true);
+					}
+				}else {
+					Error3 obj= new Error3();
+					obj.setVisible(true);
+				}
+					
+					
+			}
+		});
+		contentPane.add(inicio);
 	}
+	
 }

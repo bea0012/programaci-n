@@ -5,6 +5,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import java.awt.Font;
 import javax.swing.JPasswordField;
@@ -19,8 +20,8 @@ import java.awt.event.ActionEvent;
 public class login extends JFrame {
 
 	private JPanel contentPane;
-	private JPasswordField passwordField;
-	private JTextField textField;
+	private JPasswordField Contraseña;
+	private JTextField nombreUsuario;
 	static login login;
 
 	/**
@@ -75,38 +76,45 @@ public class login extends JFrame {
 		password.setBounds(197, 258, 56, 14);
 		contentPane.add(password);
 		
-		passwordField = new JPasswordField();
-		passwordField.setBounds(269, 255, 126, 20);
-		contentPane.add(passwordField);
+		Contraseña = new JPasswordField();
+		Contraseña.setBounds(269, 255, 126, 20);
+		contentPane.add(Contraseña);
 		
-		textField = new JTextField();
-		textField.setBounds(269, 222, 126, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		nombreUsuario = new JTextField();
+		nombreUsuario.setBounds(269, 222, 126, 20);
+		contentPane.add(nombreUsuario);
+		nombreUsuario.setColumns(10);
 		
 		final JRadioButton botonContraseña = new JRadioButton("Show");
 		botonContraseña.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent e) {
 				
 				if(botonContraseña.isSelected()) {
-					passwordField.setEchoChar((char)0);
+					Contraseña.setEchoChar((char)0);
 				}else {
-					passwordField.setEchoChar('*');
+					Contraseña.setEchoChar('*');
 				}
 			}
 		});
 		botonContraseña.setBackground(new Color(60, 0, 0));
 		botonContraseña.setForeground(new Color(255, 255, 255));
-		botonContraseña.setBounds(414, 254, 56, 23);
+		botonContraseña.setBounds(401, 254, 69, 23);
 		contentPane.add(botonContraseña);
 		
 		JButton Sudmit = new JButton("Sudmit");
 		Sudmit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				JFrame secundaria = new secundaria();
-				secundaria.setVisible(true);
-				login.setVisible(false);
+				final usuario comprobar = new usuario();
+				if (!comprobar.comprobar_usuario(nombreUsuario.getText(), Contraseña.getText())) {
+					JOptionPane.showMessageDialog(contentPane, "El usuario o la contraseña no coinciden", "Error", JOptionPane.ERROR_MESSAGE);
+				}else {
+					
+					JFrame secundaria = new secundaria();
+					secundaria.setVisible(true);
+					login.setVisible(false);
+				}
+				
 				
 			}
 		});
